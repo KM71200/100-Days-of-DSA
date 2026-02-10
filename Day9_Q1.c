@@ -1,17 +1,20 @@
-/*Problem: Read a string and check if it is a palindrome using two-pointer comparison.
+/*
+Problem: A secret system stores code names in forward order. To display them in mirror format, you must transform the given code name so that its characters appear in the opposite order.
 
 Input:
-- Single line: string s
+- Single line: a lowercase string containing only alphabetic characters (no spaces)
 
 Output:
-- Print YES if palindrome, otherwise NO
+- Print the transformed code name after applying the mirror operation
 
 Example:
 Input:
-level
+hello
 
 Output:
-YES
+olleh
+
+Explanation: The first character moves to the last position, the second to the second-last, and so on until the entire string is mirrored
 */
 
 #include <stdio.h>
@@ -23,22 +26,17 @@ int main() {
 
     int left = 0;
     int right = strlen(s) - 1;
-    int isPalindrome = 1;
 
-    // two-pointer comparison
+    // swap characters using two pointers
     while(left < right) {
-        if(s[left] != s[right]) {
-            isPalindrome = 0;
-            break;
-        }
+        char temp = s[left];
+        s[left] = s[right];
+        s[right] = temp;
+
         left++;
         right--;
     }
 
-    if(isPalindrome)
-        printf("YES");
-    else
-        printf("NO");
-
+    printf("%s", s);
     return 0;
 }
