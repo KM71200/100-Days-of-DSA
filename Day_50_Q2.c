@@ -37,6 +37,7 @@ struct TreeNode* searchBST(struct TreeNode* root, int val) {
             root = root->right;
     }
     return NULL;
+    
 }
 
 void preorder(struct TreeNode* root) {
