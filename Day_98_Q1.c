@@ -7,7 +7,7 @@ typedef struct
     int end;
 } Interval;
 
-// Comparator to sort intervals by start time
+
 int compare(const void *a, const void *b)
 {
     Interval *i1 = (Interval *)a;
@@ -28,7 +28,7 @@ int main()
     for (int i = 0; i < n; i++)
         scanf("%d %d", &arr[i].start, &arr[i].end);
 
-    // Sort intervals by start time
+   
     qsort(arr, n, sizeof(Interval), compare);
 
     printf("\nMerged Intervals:\n");
